@@ -142,3 +142,8 @@ function LoginInfo(name, password) {
 let admin = new LoginInfo("Arthur", "1234");
 
 let admin2 = new LoginInfo("Sonya", "0000");
+
+let admin3 = new LoginInfo({
+    age: 30,
+    city: "Moscow",
+})
