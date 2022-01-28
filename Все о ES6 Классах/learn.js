@@ -116,6 +116,82 @@
 //#################################################################
 
 
+//Добавляем в конструктор разные параметры
+
+class User {
+    constructor(options) {
+        this.login = options.login
+        this.password = options.password
+    }
+
+    loginInfoShow() {
+        console.log(`Ваш логин:${this.login} Ваш пароль:${this.password}`);
+    }
+
+    validatePassword() {
+        if (this.password.length >= 6) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+let user1 = new User({
+    login: 'test@mail.com',
+    password: '123456789',
+});
+
+//Добавляем в конструктор конкретные параметры
+
+class UserAnother {
+    constructor(login, password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    loginInfoShow() {
+        console.log(`Ваш логин:${this.login} Ваш пароль:${this.password}`);
+    }
+
+    validatePassword() {
+        if (this.password.length >= 6) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+let user2Login = "random@gmail.com"
+let user2Password = '0000';
+
+let user2 = new UserAnother(user2Login, user2Password);
 
 
+//Расширяем класс
 
+
+class Admin extends User {
+    constructor(options) {
+        //добавляем старые свойства конструктора перед добавлением новых
+        super(options);
+
+        this.rang = options.rang;
+    }
+
+    validatePassword() {
+        super.validatePassword()  //Обращение к функции роидетьского класса так же через super
+        if (this.password.length >= 10) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+let admin1 = new Admin({
+    login: 'admin@mail.com',
+    password: '11111111111111111',
+    rang: 10,
+})
