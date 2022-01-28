@@ -47,6 +47,9 @@ for (let key in person) {
 }
 
 
+// #####################################################################
+
+
 //getters => acess properties
 //setter => change properties
 
@@ -68,3 +71,24 @@ human.fullName = "Sam Nicklson"
 console.log(human);
 
 
+// #####################################################################
+
+
+
+
+let people = {
+    name: "John",
+    get greeting() {
+        return `Hi my name is ${this.name}!`;
+    },
+    set addLastName(i) {
+        this.name = this.name + ` ` + i;
+    },
+};
+
+
+console.log(people.name);
+
+people.addLastName = "Wick";
+
+console.log(people.name);
