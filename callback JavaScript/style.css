@@ -1,0 +1,16 @@
+
+
+.alt-color {
+    background-color: #32a3b2;
+    width: 250px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 15px;
+}
+
+.alt-color:hover {
+    background-color: #207480;  
+}
